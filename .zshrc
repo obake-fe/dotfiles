@@ -122,3 +122,5 @@ alias gp="git pull"
 
 alias path="echo $PATH | tr ':' '\n'"
 alias cp="cp -i"
+
+alias v="vim"
