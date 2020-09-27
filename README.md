@@ -29,11 +29,13 @@ https://github.com/zdharma/zinit#installation
 
 ## dotfiles
 
-install.shを実行し、ルートディレクトリにシンボリックリンクを作成
+~/git/配下にdotfilesリポジトリをクローンする
+
+./sh/install.shを実行し、ルートディレクトリにシンボリックリンクを作成
 
 ## Homebrewでアプリインストール
 
-brew_cask.shを実行し、必要macアプリをインストール
+./sh/brew_cask.shを実行し、必要macアプリをインストール
 
 ## App storeからインストールするもの
 
