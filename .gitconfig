@@ -1,0 +1,8 @@
+[user]
+	name = 朝長大地
+	email = daichi_tomonaga@waku-2.com
+
+[ghq]
+    root = ~/git
+[core]
+	excludesFile = /Users/01029269/.gitignore_global

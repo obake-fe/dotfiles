@@ -26,6 +26,8 @@
 
 https://github.com/zdharma/zinit#installation
 
+## font
+https://github.com/romkatv/powerlevel10k#fonts
 
 ## dotfiles
 
