@@ -119,6 +119,7 @@ alias ll="gls --color=auto -l"
 
 alias g="git"
 alias gs="git status"
+alias gf="git fetch"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git pull"
