@@ -46,10 +46,6 @@ https://github.com/romkatv/powerlevel10k#fonts
 - Paste
 - PasteHelper
 
-## その他インストール
-
-- safari
-
 ## その他設定
 
 ### Node
