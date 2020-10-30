@@ -2,6 +2,14 @@
 	name = 朝長大地
 	email = daichi_tomonaga@waku-2.com
 [ghq]
-    root = ~/git
+	root = ~/git
 [core]
-	excludesFile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = ~/.stCommitMsg
