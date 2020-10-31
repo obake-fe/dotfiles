@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -46,7 +45,7 @@ HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=1000000
 
-##  他のzshと履歴を共有
+## 他のzshと履歴を共有
 setopt inc_append_history
 setopt share_history
 
@@ -71,9 +70,9 @@ setopt AUTO_PARAM_KEYS
 # peco
 ## インタラクティブ検索
 function peco-history-selection() {
-    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
+  BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+  CURSOR=$#BUFFER
+  zle reset-prompt
 }
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
@@ -113,9 +112,11 @@ bindkey '^g' peco-src
 alias ls="gls --color=auto"
 alias la="gls --color=auto -la"
 alias ll="gls --color=auto -l"
+alias cp="cp -i"
+alias rm='rm -i'
+alias mv='mv -i'
 
 alias g="git"
-alias t="tig"
 alias gs="git status -s"
 alias gf="git fetch"
 alias ga="git add ."
@@ -125,7 +126,10 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gl="git log"
 
-alias path="echo $PATH | tr ':' '\n'"
-alias cp="cp -i"
-
 alias v="vim"
+alias t="tig"
+alias s="source ~/.zsh/.zshrc"
+alias path="echo $PATH | tr ':' '\n'"
+
+alias bs="brew search"
+alias bi="brew cask info"

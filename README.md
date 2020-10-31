@@ -45,6 +45,8 @@ https://github.com/romkatv/powerlevel10k#fonts
   - Git
 - Paste
 - PasteHelper
+- bettersnaptool
+- LINE
 
 ## その他設定
 
