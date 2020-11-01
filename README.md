@@ -46,11 +46,21 @@
 
 ### VSCode設定同期
 
-[【初心者】VSCodeの設定同期エクステンション「Setting Sync」 - Qiita](https://qiita.com/tomokei5634/items/22128efe306ce9bc5682)
+- [【初心者】VSCodeの設定同期エクステンション「Setting Sync」 - Qiita](https://qiita.com/tomokei5634/items/22128efe306ce9bc5682)
 
 ### iterm設定同期
 
-[ITerm2の設定をGitHubで共有……できんやんけ！って思ってたけどそうでもなかった - めっちゃいいタイトル思いついたんだけど風呂入ったら忘れちゃった](https://ry-2718.hatenablog.com/entry/2019/04/02/021006)
+- [ITerm2の設定をGitHubで共有……できんやんけ！って思ってたけどそうでもなかった - めっちゃいいタイトル思いついたんだけど風呂入ったら忘れちゃった](https://ry-2718.hatenablog.com/entry/2019/04/02/021006)
+
+## 業務外PC
+
+### iCloud同期
+
+- [google日本語入力](https://ischool.co.jp/2019-01-23/)
+- boostnote
+- [bettertouchtool](https://tom106.com/bettertouchtool-sync)
+- [Alfred](https://webrandum.net/alfred-syncing/)
+- Paste
 
 ## 参考リンク
 
