@@ -41,7 +41,7 @@ zstyle ':completion:*:default' menu select=1
 zinit ice wait'0'; zinit light zsh-users/zsh-autosuggestions
 
 ## 履歴保存管理
-HISTFILE=$HOME/.zsh-history
+HISTFILE=$ZDOTDIR/.zsh-history
 HISTSIZE=100000
 SAVEHIST=1000000
 
@@ -128,7 +128,8 @@ alias gl="git log"
 
 alias v="vim"
 alias t="tig"
-alias s="source ~/.zsh/.zshrc"
+alias szp="source ~/.zsh/.zprofile"
+alias szr="source ~/.zsh/.zshrc"
 alias path="echo $PATH | tr ':' '\n'"
 
 alias bs="brew search"
