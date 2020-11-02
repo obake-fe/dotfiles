@@ -10,7 +10,6 @@ do
     [[ "$f" == $ROOT_DIR/.git ]] && continue
     [[ "$f" == $ROOT_DIR/.gitignore ]] && continue
     [[ "$f" == $ROOT_DIR/.DS_Store ]] && continue
-    [[ "$f" == $ROOT_DIR/.zsh/.zcompdump ]] && continue
 
     ln -snfv "$f" ~
 done

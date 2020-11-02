@@ -5,7 +5,6 @@ formulas=(
   peco
   ghq
   tig
-  yarn
 )
 
 echo "start brew install ..."
