@@ -125,6 +125,7 @@ alias gp="git pull"
 alias gb="git branch"
 alias gc="git checkout"
 alias gl="git log"
+alias gr="git reset"
 
 alias v="vim"
 alias t="tig"
