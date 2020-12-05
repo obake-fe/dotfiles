@@ -103,10 +103,26 @@ function peco-src () {
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
-  #zle clear-screen
 }
 zle -N peco-src
-bindkey '^g' peco-src
+bindkey '^G' peco-src
+
+## fc コマンドでカレントディレクトリ以下のディレクトリを絞り込んだ後に移動する
+function find_cd() {
+    cd "$(find . -type d | peco)"
+}
+alias fc="find_cd"
+
+## pk で実行中のプロセスを選択して kill
+function peco-pkill() {
+  for pid in `ps aux | peco | awk '{ print $2 }'`
+  do
+    kill $pid
+    echo "Killed ${pid}"
+  done
+}
+alias pk="peco-pkill"
+
 
 # alias
 alias ls="gls --color=auto"
