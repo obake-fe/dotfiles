@@ -2,8 +2,9 @@
 
 formulas=(
   coreutils
-  peco
   ghq
+  peco
+  pngquant
   tig
 )
 

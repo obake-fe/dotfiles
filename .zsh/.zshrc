@@ -68,7 +68,7 @@ setopt AUTO_PARAM_KEYS
 
 
 # peco
-## インタラクティブ検索
+## コマンド履歴インタラクティブ検索
 function peco-history-selection() {
   BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
   CURSOR=$#BUFFER
@@ -77,7 +77,7 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
-## ディレクトリ移動
+## コマンド履歴からディレクトリ検索・移動
 if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
   autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
   add-zsh-hook chpwd chpwd_recent_dirs
@@ -96,7 +96,7 @@ function peco-cdr () {
 zle -N peco-cdr
 bindkey '^E' peco-cdr
 
-## gitリポジトリ移動
+## gitリポジトリ検索・移動
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --prompt "❯" --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
@@ -107,11 +107,12 @@ function peco-src () {
 zle -N peco-src
 bindkey '^G' peco-src
 
-## fc コマンドでカレントディレクトリ以下のディレクトリを絞り込んだ後に移動する
+## カレントディレクトリ以下のディレクトリ検索・移動
 function find_cd() {
     cd "$(find . -type d | peco)"
 }
-alias fc="find_cd"
+zle -N find_cd
+bindkey '^X' find_cd
 
 ## pk で実行中のプロセスを選択して kill
 function peco-pkill() {
@@ -148,6 +149,7 @@ alias t="tig"
 alias szp="source ~/.zsh/.zprofile"
 alias szr="source ~/.zsh/.zshrc"
 alias path="echo $PATH | tr ':' '\n'"
+alias pngq="pngquant --ext .png --force --speed 1"
 
 alias bs="brew search"
 alias bi="brew cask info"
