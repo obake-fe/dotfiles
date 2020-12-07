@@ -20,7 +20,7 @@ autoload -Uz _zinit
 ### End of Zinit's installer chunk
 
 
-# プラグイン
+# Zsh設定
 ## テーマ（.p10k.zshファイルで詳細設定）
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
@@ -37,8 +37,20 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## 補完候補を一覧表示したとき、Tabや矢印で選択できるようにする
 zstyle ':completion:*:default' menu select=1 
 
+## シンタックスハイライト
+zinit light zsh-users/zsh-syntax-highlighting
+
 ## 履歴補完
-zinit ice wait'0'; zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
+
+## 入力した文字から始まるコマンドを履歴から検索し、上下矢印で補完
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
 
 ## 履歴保存管理
 HISTFILE=$ZDOTDIR/.zsh-history
@@ -49,26 +61,14 @@ SAVEHIST=1000000
 setopt inc_append_history
 setopt share_history
 
-# 入力した文字から始まるコマンドを履歴から検索し、上下矢印で補完
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search
-bindkey "^[[B" down-line-or-beginning-search
-
-## シンタックスハイライト
-zinit ice wait'0'; zinit light zsh-users/zsh-syntax-highlighting
-
 ## パスを直接入力してもcdする
 setopt AUTO_CD
 
 ## 環境変数を補完
 setopt AUTO_PARAM_KEYS
 
-
-# peco
-## コマンド履歴インタラクティブ検索
+## peco
+### コマンド履歴インタラクティブ検索
 function peco-history-selection() {
   BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
   CURSOR=$#BUFFER
@@ -77,7 +77,7 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
-## コマンド履歴からディレクトリ検索・移動
+### コマンド履歴からディレクトリ検索・移動
 if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
   autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
   add-zsh-hook chpwd chpwd_recent_dirs
@@ -96,7 +96,7 @@ function peco-cdr () {
 zle -N peco-cdr
 bindkey '^E' peco-cdr
 
-## gitリポジトリ検索・移動
+### gitリポジトリ検索・移動
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --prompt "❯" --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
@@ -107,14 +107,14 @@ function peco-src () {
 zle -N peco-src
 bindkey '^G' peco-src
 
-## カレントディレクトリ以下のディレクトリ検索・移動
+### カレントディレクトリ以下のディレクトリ検索・移動
 function find_cd() {
     cd "$(find . -type d | peco)"
 }
 zle -N find_cd
 bindkey '^X' find_cd
 
-## pk で実行中のプロセスを選択して kill
+### pk で実行中のプロセスを選択して kill
 function peco-pkill() {
   for pid in `ps aux | peco | awk '{ print $2 }'`
   do
