@@ -1,4 +1,5 @@
 .zsh/.zcompdump
+.zsh/.zcompcache/
 
 # zshのコマンド履歴ファイル（zinit非アクティブ状態でコマンドを叩くと作成される）
 .zsh/.zsh_history
