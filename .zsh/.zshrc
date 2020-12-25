@@ -147,6 +147,7 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gl="git log"
 alias gr="git reset"
+alias gpush-u='git symbolic-ref --short HEAD | tr -d "\n" | xargs -I@ git push -u origin @' #カレントブランチで `git push -u` を行う
 
 alias v="vim"
 alias t="tig"
