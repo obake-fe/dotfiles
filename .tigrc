@@ -1,2 +1,47 @@
-# main viewの左端にコミットIDを表示する
-set main-view = id date author commit-title:graph=yes,refs=yes
+# view設定
+
+## view
+### main
+set main-view-date = custom
+set main-view-date-format = "%Y-%m-%d %H:%M"
+
+### blame view
+set blame-view  = date author id:yes,color line-number:yes,interval=1 text
+set blame-view-date = custom
+set blame-view-date-format = "%Y-%m-%d %H:%M
+
+### ref view
+set refs-view = id date author ref commit-title
+set refs-view-date = custom
+set refs-view-date-format = "%Y-%m-%d %H:%M
+
+### tree view
+set tree-view-date = custom
+set tree-view-date-format = "%Y-%m-%d %H:%M""
+
+### stage view
+set stage-view  = line-number:yes,interval=1 text
+
+### others
+set pager-view  = line-number:yes,interval=1 text
+set stage-view  = line-number:yes,interval=1 text
+set log-view    = line-number:yes,interval=1 text
+set blob-view   = line-number:yes,interval=1 text
+set diff-view   = line-number:yes,interval=1 text:yes,commit-title-overflow=no
+
+
+## git
+### git fetch (default: :toggle file-name / :toggle commit-title-refs)
+bind generic F ?git fetch %(remote)
+bind main    F ?git fetch %(remote)
+
+### git pull
+bind generic U ?git pull %(remote)
+
+# P で remote への push
+bind generic P ?git push -u %(remote) %(repo:head)
+
+### git rebase -i 
+bind main    B !git rebase -i %(commit)
+bind diff    B !git rebase -i %(commit)
+
