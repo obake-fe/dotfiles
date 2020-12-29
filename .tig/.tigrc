@@ -45,3 +45,7 @@ bind generic P ?git push -u %(remote) %(repo:head)
 bind main    B !git rebase -i %(commit)
 bind diff    B !git rebase -i %(commit)
 
+
+# key bind
+bind generic g move-first-line
+bind generic G move-last-line
