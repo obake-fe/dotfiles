@@ -38,8 +38,11 @@ bind main    F ?git fetch %(remote)
 ### git pull
 bind generic U ?git pull %(remote)
 
-# P で remote への push
+### git push -u
 bind generic P ?git push -u %(remote) %(repo:head)
+
+### git clean
+bind status  D ?git clean -d -f -- %(file)
 
 ### git rebase -i 
 bind main    B !git rebase -i %(commit)
