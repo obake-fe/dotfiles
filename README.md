@@ -2,51 +2,45 @@
 
 ## Chromeインストール
 
-[Google Chrome ウェブブラウザ](https://www.google.co.jp/chrome/?brand=AGAK&gclsrc=aw.ds&&gclid=CjwKCAiA_Kz-BRAJEiwAhJNY75fDAMeyEL5ZSHnlXoKIbbJkNQgRUycLmpmGQQJaANMJQExudh0mjhoCcXEQAvD_BwE)
+- [Google Chrome ウェブブラウザ](https://www.google.co.jp/chrome/?brand=AGAK&gclsrc=aw.ds&&gclid=CjwKCAiA_Kz-BRAJEiwAhJNY75fDAMeyEL5ZSHnlXoKIbbJkNQgRUycLmpmGQQJaANMJQExudh0mjhoCcXEQAvD_BwE)
 
-## Xcodeインストール
+## Xcode, Homebrew, Git
 
-[MacOSでCommand line tools for XcodeとHomebrewのインストール - Qiita](https://qiita.com/royroy/items/338362362de73a94fc0c)
+- [MacOSでCommand line tools for XcodeとHomebrewのインストール - Qiita](https://qiita.com/royroy/items/338362362de73a94fc0c)
+- [最新の Git を Mac にインストールする手順 - Qiita](https://qiita.com/normalsalt/items/f200ba50363ebfd46df0)
 
-## Homebrewとzsh
+## Zsh, Zinit
 
-- [Homebrewでzshをインストールする](https://smashawk.com/post-2)
+- [【Zsh】Zinitでターミナル環境を整えよう！](https://qiita.com/nb_tomo/items/c2edf65de684f026c59c)
 
-## zinit
+## Vim
 
-- zshプラグインマネージャであるzinitをインストール
-- https://github.com/zdharma/zinit#installation
+- プラグインマネージャインストール
 
-## font
-
-- 必要フォントをインストールする
-- https://github.com/romkatv/powerlevel10k#fonts
-
-## Git
-
-- AppStoreからXcodeをインストール
-- このリポジトリをクローンする
+```shell
+$ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+$ sh ./installer.sh ~/.vim/bundles
+```
 
 ## dotfiles
 
+- このリポジトリをクローンする
 - sh/mk_link.shを実行し、ホームディレクトリにdotfilesのシンボリックリンクを作成
 
 ## Node.js
 
 - nodenvでNode.jsをインストールする（PATHは`.zprofile`で通してある）
-- [anyenvとnodenvでNode.jsのバージョン管理をしよう！ - to-R Media](https://www.to-r.net/media/anyenv/)
+  - [anyenvとnodenvでNode.jsのバージョン管理をしよう！ - to-R Media](https://www.to-r.net/media/anyenv/)
 - `npm`で`yarn`をインストールする
-- [Macでyarnをインストールする方法 \| Awesome Blog](https://awesome-linus.com/2019/04/11/mac-yarn-install/)
+  - [Macでyarnをインストールする方法 \| Awesome Blog](https://awesome-linus.com/2019/04/11/mac-yarn-install/)
 
 ## Homebrewでインストール
 
 - sh/cask_install.shを実行し、必要macアプリをインストール
 - sh/formula_install.shを実行し、formulaをインストール
 
-## App storeでインストール
+## App Storeでインストール
 
-- Xcode
-  - Git
 - Paste
 - PasteHelper
 - bettersnaptool
@@ -54,7 +48,7 @@
 
 ## その他設定
 
-### VSCode設定同期
+### VS Code設定同期
 
 - [【初心者】VSCodeの設定同期エクステンション「Setting Sync」 - Qiita](https://qiita.com/tomokei5634/items/22128efe306ce9bc5682)
 
