@@ -2,6 +2,7 @@
 
 ## view
 ### main
+set main-view = id date author commit-title:graph=yes,refs=yes
 set main-view-date = custom
 set main-view-date-format = "%Y-%m-%d %H:%M"
 
@@ -48,6 +49,8 @@ bind status  D ?git clean -d -f -- %(file)
 bind main    B !git rebase -i %(commit)
 bind diff    B !git rebase -i %(commit)
 
+### git commit --amend
+bind generic + !git commit --amend --allow-empty
 
 # key bind
 bind generic g move-first-line
