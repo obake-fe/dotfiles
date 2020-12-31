@@ -42,7 +42,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 ## 履歴補完
 zinit light zsh-users/zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=243"
 
 ## 入力した文字から始まるコマンドを履歴から検索し、上下矢印で補完
 autoload -U up-line-or-beginning-search
@@ -157,4 +157,4 @@ alias path="echo $PATH | tr ':' '\n'"
 alias pngq="pngquant --ext .png --force --speed 1"
 
 alias bs="brew search"
-alias bi="brew cask info"
+alias bi="brew info"

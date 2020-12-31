@@ -11,7 +11,7 @@
 
 ## Zsh, Zinit
 
-- [【Zsh】Zinitでターミナル環境を整えよう！](https://qiita.com/nb_tomo/items/c2edf65de684f026c59c)
+- [【Zsh】Zinitでターミナル環境を整えよう！ - Qiita](https://qiita.com/nb_tomo/items/c2edf65de684f026c59c)
 
 ## Vim
 
