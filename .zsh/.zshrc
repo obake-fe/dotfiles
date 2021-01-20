@@ -142,12 +142,13 @@ alias gs="git status -s"
 alias gf="git fetch"
 alias ga="git add ."
 alias gt="git commit -m"
-alias gp="git pull"
+alias gu="git pull"
 alias gb="git branch"
 alias gc="git checkout"
 alias gl="git log"
 alias gr="git reset"
-alias gpush-u='git symbolic-ref --short HEAD | tr -d "\n" | xargs -I@ git push -u origin @' #カレントブランチで `git push -u` を行う
+alias gp="git push"
+alias gpu='git symbolic-ref --short HEAD | tr -d "\n" | xargs -I@ git push -u origin @' #カレントブランチで `git push -u` を行う
 
 alias v="vim"
 alias t="tig"
