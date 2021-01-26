@@ -37,6 +37,7 @@ $ sh ./installer.sh ~/.vim/bundles
 ## Homebrewでインストール
 
 - [Brewfile からパッケージをインストールする](https://engineers.weddingpark.co.jp/homebrew-bundle/)
+- [BrewBundleの使い方.md](https://gist.github.com/yoshimana/43b9205ddedad0ad65f2dee00c6f4261)
 
 ```shell
 $ brew bundle --global

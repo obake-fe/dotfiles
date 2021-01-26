@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 brew "coreutils"
@@ -21,21 +22,23 @@ cask "fork"
 cask "forklift"
 cask "franz"
 cask "google-drive-file-stream"
+cask "google-japanese-ime"
 cask "imageoptim"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "kindle"
+cask "notion"
 cask "skitch"
 cask "slack"
 cask "spotify"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "zeplin"
-cask "zoomus"
+cask "zoom"
 mas "BetterSnapTool", id: 417375580
 mas "LINE", id: 539883307
+mas "Just Focus", id: 1142151959
+mas "Keynote", id: 409183694
 mas "Paste", id: 967805235
 mas "Perculia", id: 1462633284
-mas "Keynote", id: 409183694
-mas "Just Focus", id: 1142151959
 mas "ScreenPointer", id: 1368204906
