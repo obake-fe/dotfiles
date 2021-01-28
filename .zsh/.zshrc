@@ -159,3 +159,6 @@ alias pngq="pngquant --ext .png --force --speed 1"
 
 alias bs="brew search"
 alias bi="brew info"
+
+alias ys="yarn start"
+alias ysb="yarn storybook"
