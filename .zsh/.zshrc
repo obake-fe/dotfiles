@@ -151,6 +151,7 @@ alias gbnm="git branch --no-merged"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gl="git log"
+alias glo="git log --oneline"
 alias gr="git reset"
 alias gps="git push"
 alias gpsu='git symbolic-ref --short HEAD | tr -d "\n" | xargs -I@ git push -u origin @' #カレントブランチで `git push -u` を行う

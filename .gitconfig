@@ -9,3 +9,7 @@
 	prune = true
 [alias]
     delete-merged-branch = !git branch --merged | egrep -v '\\*|master|develop' | xargs git branch -d
+[rebase]
+	autostash = true
+	abbreviateCommands = true
+	autosqaush = true
