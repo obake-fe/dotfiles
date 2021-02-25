@@ -49,6 +49,10 @@ bind status  D ?git clean -d -f -- %(file)
 bind main    B !git rebase -i %(commit)
 bind diff    B !git rebase -i %(commit)
 
+### git checkout
+bind main    C ?git checkout %(commit)
+bind generic - ?git checkout -
+
 ### git commit --amend
 bind generic + !git commit --amend --allow-empty
 
