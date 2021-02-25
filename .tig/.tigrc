@@ -1,29 +1,24 @@
-# view設定
-
-## view
-### main
+# view setting
+## main
 set main-view = id date author commit-title:graph=yes,refs=yes
 set main-view-date = custom
 set main-view-date-format = "%Y-%m-%d %H:%M"
 
-### blame view
+## blame view
 set blame-view  = date author id:yes,color line-number:yes,interval=1 text
 set blame-view-date = custom
 set blame-view-date-format = "%Y-%m-%d %H:%M
 
-### ref view
+## ref view
 set refs-view = id date author ref commit-title
 set refs-view-date = custom
 set refs-view-date-format = "%Y-%m-%d %H:%M
 
-### tree view
+## tree view
 set tree-view-date = custom
 set tree-view-date-format = "%Y-%m-%d %H:%M""
 
-### stage view
-set stage-view  = line-number:yes,interval=1 text
-
-### others
+## others
 set pager-view  = line-number:yes,interval=1 text
 set stage-view  = line-number:yes,interval=1 text
 set log-view    = line-number:yes,interval=1 text
@@ -31,31 +26,42 @@ set blob-view   = line-number:yes,interval=1 text
 set diff-view   = line-number:yes,interval=1 text:yes,commit-title-overflow=no
 
 
-## git
-### git fetch (default: :toggle file-name / :toggle commit-title-refs)
+# git setting
+## git fetch (default: :toggle file-name / :toggle commit-title-refs)
 bind generic F ?git fetch %(remote)
-bind main    F ?git fetch %(remote)
 
-### git pull
+## git pull
 bind generic U ?git pull %(remote)
 
-### git push -u
+## git push -u
 bind generic P ?git push -u %(remote) %(repo:head)
 
-### git clean
+## git clean
 bind status  D ?git clean -d -f -- %(file)
 
-### git rebase -i 
+## git rebase -i
 bind main    B !git rebase -i %(commit)
 bind diff    B !git rebase -i %(commit)
 
-### git checkout
+## git checkout
 bind main    C ?git checkout %(commit)
 bind generic - ?git checkout -
 
-### git commit --amend
+## git commit --amend
 bind generic + !git commit --amend --allow-empty
 
-# key bind
+
+# other key bind
+## general
 bind generic g move-first-line
 bind generic G move-last-line
+
+## ; で GitHub の該当コミットを開く
+bind main    ; @hub browse -- commit/%(commit)
+bind blame   ; @hub browse -- commit/%(commit)
+bind diff    ; @hub browse -- commit/%(commit)
+
+## ; で GitHub の該当ページを開く
+bind tree    ; @hub browse -- blob/%(branch)/%(file)
+bind blob    ; @hub browse -- blob/%(branch)/%(file)
+bind grep    ; @hub browse -- blob/%(branch)/%(file)
