@@ -12,6 +12,5 @@
 [rebase]
 	autostash = true
 	abbreviateCommands = true
-	autosqaush = true
 [grep]
 	lineNumber = true
