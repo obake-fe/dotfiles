@@ -155,6 +155,7 @@ alias glo="git log --oneline"
 alias gr="git reset"
 alias gps="git push"
 alias gpsu='git symbolic-ref --short HEAD | tr -d "\n" | xargs -I@ git push -u origin @' #カレントブランチで `git push -u` を行う
+alias gpst='git push origin --tags'
 
 alias v="vim"
 alias t="tig"

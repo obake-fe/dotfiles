@@ -50,6 +50,10 @@ bind generic - ?git checkout -
 ## git commit --amend
 bind generic + !git commit --amend --allow-empty
 
+## git tag
+bind main    T ?git tag "%(prompt Enter tag name: )" %(commit)
+bind refs    T ?git tag "%(prompt Enter tag name: )" %(branch)
+
 
 # other key bind
 ## general
