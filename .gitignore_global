@@ -1,4 +1,13 @@
+# MacOS
 .DS_Store
+
+# Node.js
 .node-version
+
+# WebStorm
 .idea
+
+# others
+node_modules
 .eslintcache
+
