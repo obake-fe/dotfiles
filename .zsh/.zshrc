@@ -168,5 +168,8 @@ alias pngq="pngquant --ext .png --force --speed 1"
 alias bs="brew search"
 alias bi="brew info"
 
+alias ns="npm run start"
 alias ys="yarn start"
 alias ysb="yarn storybook"
+alias yt="yarn test"
+alias yb="yarn build"
