@@ -173,3 +173,7 @@ alias ys="yarn start"
 alias ysb="yarn storybook"
 alias yt="yarn test"
 alias yb="yarn build"
+
+# others
+## mkdir & cd
+function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
