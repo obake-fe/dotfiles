@@ -54,6 +54,14 @@ bind generic + !git commit --amend --allow-empty
 bind main    T ?git tag "%(prompt Enter tag name: )" %(commit)
 bind refs    T ?git tag "%(prompt Enter tag name: )" %(branch)
 
+## git commit --fixup
+bind diff    F ?!git commit --fixup %(commit)
+bind main    F ?!git commit --fixup %(commit)
+
+## git commit --squash
+bind diff    S ?!git commit --squash %(commit)
+bind main    S ?!git commit --squash %(commit)
+
 
 # other key bind
 ## general
