@@ -178,6 +178,11 @@ alias ysb="yarn storybook"
 alias yt="yarn test"
 alias yb="yarn build"
 
+alias d="docker"
+alias dp="docker ps"
+alias dpa="docker ps -a"
+alias dil="docker image ls"
+
 # others
 ## mkdir & cd
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
