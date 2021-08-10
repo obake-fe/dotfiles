@@ -25,25 +25,27 @@ $ sh ./installer.sh ~/.vim/bundles
 ## dotfiles
 
 - このリポジトリをクローンする
-- sh/mk_link.shを実行し、ホームディレクトリにdotfilesのシンボリックリンクを作成
+- ホームディレクトリにdotfilesのシンボリックリンクを作成
+```shell
+$ sh/mk_link.sh
+```
 
 ## Node.js
 
 - nodenvでNode.jsをインストールする（PATHは`.zprofile`で通してある）
   - [anyenvとnodenvでNode.jsのバージョン管理をしよう！ - to-R Media](https://www.to-r.net/media/anyenv/)
-- `npm`で`yarn`をインストールする
-  - [Macでyarnをインストールする方法 \| Awesome Blog](https://awesome-linus.com/2019/04/11/mac-yarn-install/)
+- 必要パッケージのインストールスクリプトを実行
+```shell
+$ sh set_node.sh
+```
 
-## Homebrewでインストール
-
-- [Brewfile からパッケージをインストールする](https://engineers.weddingpark.co.jp/homebrew-bundle/)
-- [BrewBundleの使い方.md](https://gist.github.com/yoshimana/43b9205ddedad0ad65f2dee00c6f4261)
+## Homebrewでアプリインストール
 
 ```shell
 $ brew bundle --global
 ```
 
-## ブラウザでインストール
+## ブラウザでアプリインストール
 
 - [PasteHelper](https://pasteapp.io/helper)
 
@@ -63,3 +65,6 @@ $ brew bundle --global
 - [ターミナルでコマンドを入力できない　プロセスが完了しましたとなる - Qiita](https://qiita.com/kohei1218/items/7128cac7e5717181abc7)
 - [bashの表示色をカスタマイズ - Qiita](https://qiita.com/soramugi/items/a726bd64330e08daa9e5)
 - [おれのおれによるおれのためのMacおすすめ設定 - Qiita](https://qiita.com/jonghyo/items/733e0aeb5d6cd58e4855)
+- [BrewBundleの使い方.md](https://gist.github.com/yoshimana/43b9205ddedad0ad65f2dee00c6f4261)
+- [Macでyarnをインストールする方法 \| Awesome Blog](https://awesome-linus.com/2019/04/11/mac-yarn-install/)
+- [Brewfile からパッケージをインストールする](https://engineers.weddingpark.co.jp/homebrew-bundle/)
