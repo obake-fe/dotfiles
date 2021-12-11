@@ -181,7 +181,14 @@ alias yb="yarn build"
 alias d="docker"
 alias dp="docker ps"
 alias dpa="docker ps -a"
+alias di="docker image"
 alias dil="docker image ls"
+alias dv="docker volume"
+alias dvl="docker volume ls"
+alias dc="docker-compose"
+alias dcud="docker-compose up -d"
+alias dcst="docker-compose start" 
+alias dcsp="docker-compose stop"
 
 # others
 ## mkdir & cd
