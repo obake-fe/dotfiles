@@ -32,11 +32,12 @@ $ sh/mk_link.sh
 
 ## Node.js
 
-- nodenvでNode.jsをインストールする（PATHは`.zprofile`で通してある）
-  - [anyenvとnodenvでNode.jsのバージョン管理をしよう！ - to-R Media](https://www.to-r.net/media/anyenv/)
-- 必要パッケージのインストールスクリプトを実行
+- [Volta](https://volta.sh/) でinstall
 ```shell
-$ sh set_node.sh
+$ curl https://get.volta.sh | bash
+$ volta -v
+$ volta install node@16
+$ volta install yarn@latest
 ```
 
 ## Homebrewでアプリインストール
