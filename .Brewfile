@@ -4,9 +4,12 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 brew "coreutils"
+brew "ffmpeg"
+brew "gh"
 brew "ghq"
 brew "git"
 brew "hub"
+brew "imagemagick"
 brew "mas"
 brew "peco"
 brew "pngquant"
@@ -21,27 +24,22 @@ cask "discord"
 cask "docker"
 cask "firefox"
 cask "fork"
-cask "forklift"
 cask "franz"
 cask "google-drive-file-stream"
 cask "google-japanese-ime"
-cask "imageoptim"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "kindle"
-cask "notion"
 cask "scroll-reverser"
-cask "skitch"
 cask "slack"
-cask "spotify"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "zeplin"
 cask "zoom"
 mas "BetterSnapTool", id: 417375580
 mas "LINE", id: 539883307
-mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
 mas "Paste", id: 967805235
 mas "Perculia", id: 1462633284
 mas "ScreenPointer", id: 1368204906
+mas "Slack", id: 803453959
