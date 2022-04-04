@@ -8,7 +8,8 @@
 ## zinitのコマンド履歴ファイル
 .zsh/.zsh-history
 
-
 # tig
 .tigrc.swp
 .tig/tig/history
+.tig/zinit/
+.zsh/.zsh_sessions/
