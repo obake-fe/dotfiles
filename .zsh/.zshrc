@@ -27,6 +27,19 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 ## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
+## zeno設定
+zinit ice lucid depth"1" blockf
+zinit light yuki-yano/zeno.zsh
+
+if [[ -n $ZENO_LOADED ]]; then
+  bindkey ' '  zeno-auto-snippet
+  bindkey '^m' zeno-auto-snippet-and-accept-line
+  bindkey '^i' zeno-completion
+  bindkey '^g' zeno-ghq-cd
+  bindkey '^r' zeno-history-selection
+  bindkey '^x' zeno-insert-snippet
+fi
+
 ## コマンド補完
 zinit ice wait'0'; zinit light zsh-users/zsh-completions
 autoload -Uz compinit && compinit
@@ -35,10 +48,10 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 ## 補完候補を一覧表示したとき、Tabや矢印で選択できるようにする
-zstyle ':completion:*:default' menu select=1 
+zstyle ':completion:*:default' menu select=1
 
 ## シンタックスハイライト
-zinit light zsh-users/zsh-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 ## 履歴補完
 zinit light zsh-users/zsh-autosuggestions
@@ -68,138 +81,85 @@ setopt AUTO_CD
 setopt AUTO_PARAM_KEYS
 
 ## peco
-### コマンド履歴インタラクティブ検索
-function peco-history-selection() {
-  BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
+# ### コマンド履歴からディレクトリ検索・移動
+# if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
+#   autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+#   add-zsh-hook chpwd chpwd_recent_dirs
+#   zstyle ':completion:*' recent-dirs-insert both
+#   zstyle ':chpwd:*' recent-dirs-default true
+#   zstyle ':chpwd:*' recent-dirs-max 1000
+#   zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/chpwd-recent-dirs"
+# fi
+# function peco-cdr () {
+#   local selected_dir="$(cdr -l | sed 's/^[0-9]* *//' | peco)"
+#   if [ -n "$selected_dir" ]; then
+#     BUFFER="cd ${selected_dir}"
+#     zle accept-line
+#   fi
+# }
+# zle -N peco-cdr
+# bindkey '^E' peco-cdr
 
-### コマンド履歴からディレクトリ検索・移動
-if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
-  autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-  add-zsh-hook chpwd chpwd_recent_dirs
-  zstyle ':completion:*' recent-dirs-insert both
-  zstyle ':chpwd:*' recent-dirs-default true
-  zstyle ':chpwd:*' recent-dirs-max 1000
-  zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/chpwd-recent-dirs"
-fi
-function peco-cdr () {
-  local selected_dir="$(cdr -l | sed 's/^[0-9]* *//' | peco)"
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-}
-zle -N peco-cdr
-bindkey '^E' peco-cdr
-
-### gitリポジトリ検索・移動
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco)
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-}
-zle -N peco-src
-bindkey '^G' peco-src
-
-### カレントディレクトリ以下のディレクトリ検索・移動
-function find_cd() {
-  local selected_dir=$(find . -type d | peco)
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-}
-zle -N find_cd
-bindkey '^X' find_cd
-
-### pk で実行中のプロセスを選択して kill
-function peco-pkill() {
-  for pid in `ps aux | peco | awk '{ print $2 }'`
-  do
-    kill $pid
-    echo "Killed ${pid}"
-  done
-}
-alias pk="peco-pkill"
+# ### カレントディレクトリ以下のディレクトリ検索・移動
+# function find_cd() {
+#   local selected_dir=$(find . -type d | peco)
+#   if [ -n "$selected_dir" ]; then
+#     BUFFER="cd ${selected_dir}"
+#     zle accept-line
+#   fi
+# }
+# zle -N find_cd
+# bindkey '^X' find_cd
+#
+# ### pk で実行中のプロセスを選択して kill
+# function peco-pkill() {
+#   for pid in `ps aux | peco | awk '{ print $2 }'`
+#   do
+#     kill $pid
+#     echo "Killed ${pid}"
+#   done
+# }
+# alias pk="peco-pkill"
 
 
 # alias
-alias ls="gls --color=auto"
-alias la="gls --color=auto -la"
-alias ll="gls --color=auto -l"
-alias cp="cp -i"
-alias rm='rm -i'
-alias mv='mv -i'
+# alias cp="cp -i"
+# alias rm='rm -i'
+# alias mv='mv -i'
 
-alias g="git"
-# alias gs="git status -s"  // tigで表示できるのでコメントアウト
-alias gf="git fetch"
-alias ga="git add ."
-alias gcm="git commit -m"
-alias gcnm="git commit --no-verify -m"
-alias gp="git pull"
-alias gpr="git pull --rebase"
-alias gb="git branch"
-alias gba="git branch -a"
-alias gbm="git branch --merged"
-alias gbnm="git branch --no-merged"
-alias gc="git checkout"
-alias gcb="git checkout -b"
-alias gc-="git checkout -"
-alias gs="git switch"
-alias gsc="git switch -c"
-alias grs="git restore"
-alias gl="git log"
-alias glo="git log --oneline"
-alias gr="git reset"
-alias gps="git push"
+# alias gpr="git pull --rebase"
+# alias gba="git branch -a"
+# alias gbm="git branch --merged"
+# alias gbnm="git branch --no-merged"
+# alias grs="git restore"
+# alias gl="git log"
+# alias glo="git log --oneline"
+# alias gr="git reset"
 alias gpsu="git symbolic-ref --short HEAD | tr -d "\n" | xargs -I@ git push -u origin @" #カレントブランチで `git push -u` を行う
-alias gpst="git push origin --tags"
-alias gss="git stash save"
-alias gsa="git stash apply"
-alias gsd="git stash drop"
-alias gcp="git cherry-pick"
-alias gcpc="git cherry-pick --continue"
-alias gcpa="git cherry-pick --abort"
-alias grb="git rebase"
-alias grbc="git rebase --continue"
-alias arba="git rebase --abort"
 
-alias v="vim"
-alias t="tig"
+# alias gss="git stash save"
+# alias gsa="git stash apply"
+# alias gsd="git stash drop"
+# alias gcp="git cherry-pick"
+# alias gcpc="git cherry-pick --continue"
+# alias gcpa="git cherry-pick --abort"
+
 alias szp="source ~/.zsh/.zprofile"
 alias szr="source ~/.zsh/.zshrc"
 alias es='exec $SHELL -l'
-alias path="echo $PATH | tr ':' '\n'"
-alias pngq="pngquant --ext .png --force --speed 1"
+# alias pngq="pngquant --ext .png --force --speed 1"
 
-alias bs="brew search"
-alias bi="brew info"
+# alias bs="brew search"
+# alias bi="brew info"
 
-alias ns="npm run start"
-alias ys="yarn start"
-alias ysb="yarn storybook"
-alias yt="yarn test"
-alias yb="yarn build"
+# alias ysb="yarn storybook"
 
-alias d="docker"
-alias dp="docker ps"
-alias dpa="docker ps -a"
-alias di="docker image"
-alias dil="docker image ls"
-alias dv="docker volume"
-alias dvl="docker volume ls"
-alias dc="docker-compose"
-alias dcud="docker-compose up -d"
-alias dcst="docker-compose start" 
-alias dcsp="docker-compose stop"
+# alias di="docker image"
+# alias dil="docker image ls"
+# alias dv="docker volume"
+# alias dvl="docker volume ls"
+# alias dc="docker-compose"
 
 # others
 ## mkdir & cd
-function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+# function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }

@@ -3,6 +3,12 @@
 ## zshのルートディレクトリを変更する
 export ZDOTDIR=$HOME/.zsh
 
+## zeno
+export ZENO_HOME=$HOME/.zeno
+
+## fzf
+export FZF_DEFAULT_OPTS='--reverse'
+
 ## homebrew
 export PATH=$HOME/homebrew/bin:$PATH
 

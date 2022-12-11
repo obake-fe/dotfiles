@@ -1,0 +1,144 @@
+snippets:
+# cd
+  - name: ..
+    keyword: ..
+    snippet: cd ..
+
+  - name: ...
+    keyword: ...
+    snippet: cd ../..
+
+# ls
+  - name: ls
+    keyword: ls
+    snippet: gls --color=auto
+
+  - name: la
+    keyword: la
+    snippet: gls --color=auto -la
+
+  - name: ll
+    keyword: ll
+    snippet: gls --color=auto -l
+
+# git
+  - name: g
+    keyword: g
+    snippet: git
+
+  - name: git status
+    keyword: gs
+    snippet: git status --short --branch
+
+  - name: git fetch
+    keyword: gf
+    snippet: git fetch
+
+  - name: git branch
+    keyword: gb
+    snippet: git branch
+
+  - name: git add
+    keyword: ga
+    snippet: git add
+
+  - name: git commit message
+    keyword: gcm
+    snippet: git commit -m '{{commit_message}}'
+
+  - name: git commit message --no-verify
+    keyword: gcnm
+    snippet: git commit --no-verify -m '{{commit_message}}'
+
+  - name: git switch
+    keyword: gw
+    snippet: git switch
+
+  - name: git switch -c
+    keyword: gwc
+    snippet: git switch -c
+
+  - name: git switch -
+    keyword: gw-
+    snippet: git switch -
+
+  - name: git pull
+    keyword: gp
+    snippet: git pull
+
+  - name: git push origin --tags
+    keyword: gpst
+    snippet: git push origin --tags
+
+  - name: git rebase
+    keyword: grb
+    snippet: git rebase
+
+  - name: git rebase
+    keyword: grbc
+    snippet: git rebase --continue
+
+  - name: git rebase
+    keyword: grba
+    snippet: git rebase --abort
+
+# npm, yarn
+  - name: npm run start
+    keyword: ns
+    snippet: npm run start
+
+  - name: yarn start
+    keyword: ys
+    snippet: yarn start
+
+  - name: yarn test
+    keyword: yt
+    snippet: yarn test
+
+  - name: yarn build
+    keyword: yb
+    snippet: yarn build
+
+# docker
+  - name: docker
+    keyword: d
+    snippet: docker
+
+  - name: docker ps
+    keyword: dp
+    snippet: docker ps
+
+  - name: docker ps -a
+    keyword: dpa
+    snippet: docker ps -a
+
+  - name: docker-compose up -d
+    keyword: dcud
+    snippet: docker-compose up -d
+
+  - name: docker-compose start
+    keyword: dcst
+    snippet: docker-compose start
+
+  - name: docker-compose stop
+    keyword: dcsp
+    snippet: docker-compose stop
+
+# others
+  - name: vim
+    keyword: v
+    snippet: vim
+
+  - name: tig
+    keyword: t
+    snippet: tig
+
+  - name: path
+    keyword: path
+    snippet: echo $PATH | tr ':' '\n'
+
+  - name: yyyymmdd
+    keyword: yyyymmdd
+    snippet: date "+%Y%m%d"
+    evaluate: true # snippetをシェルスクリプトとして解釈し、その出力を展開する
+    global: true # 行頭以外でも展開する (Zshのglobal alias相当)
