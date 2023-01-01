@@ -124,6 +124,19 @@ snippets:
     keyword: dcsp
     snippet: docker-compose stop
 
+# shell
+  - name: source zprofile
+    keyword: szp
+    snippet: source ~/.zsh/.zprofile
+
+  - name: source zshrc
+    keyword: szr
+    snippet: source ~/.zsh/.zshrc
+
+  - name: exec $SHELL -l
+    keyword: es
+    snippet: exec $SHELL -l
+
 # others
   - name: vim
     keyword: v

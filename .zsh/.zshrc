@@ -144,9 +144,6 @@ alias gpsu="git symbolic-ref --short HEAD | tr -d "\n" | xargs -I@ git push -u o
 # alias gcpc="git cherry-pick --continue"
 # alias gcpa="git cherry-pick --abort"
 
-alias szp="source ~/.zsh/.zprofile"
-alias szr="source ~/.zsh/.zshrc"
-alias es='exec $SHELL -l'
 # alias pngq="pngquant --ext .png --force --speed 1"
 
 # alias bs="brew search"
@@ -163,3 +160,16 @@ alias es='exec $SHELL -l'
 # others
 ## mkdir & cd
 # function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+## history管理
+zshaddhistory() {
+    local line=${1%%$'\n'}
+    local cmd=${line%% *}
+
+    # 以下の条件をすべて満たすものだけをヒストリに追加する
+    [[
+        "$?" != 0
+        && ${cmd} != (l|l[sal])
+        && ${cmd} != (c|cd)
+    ]]
+}
