@@ -26,123 +26,123 @@ snippets:
     keyword: g
     snippet: git
 
-  - name: git status
+  - name: gs
     keyword: gs
     snippet: git status --short --branch
 
-  - name: git fetch
+  - name: gf
     keyword: gf
     snippet: git fetch
 
-  - name: git branch
+  - name: gb
     keyword: gb
     snippet: git branch
 
-  - name: git add
+  - name: ga
     keyword: ga
     snippet: git add
 
-  - name: git commit message
+  - name: gcm
     keyword: gcm
     snippet: git commit -m '{{commit_message}}'
 
-  - name: git commit message --no-verify
+  - name: gcnm
     keyword: gcnm
     snippet: git commit --no-verify -m '{{commit_message}}'
 
-  - name: git switch
+  - name: gw
     keyword: gw
     snippet: git switch
 
-  - name: git switch -c
+  - name: gwc
     keyword: gwc
     snippet: git switch -c
 
-  - name: git switch -
+  - name: gw-
     keyword: gw-
     snippet: git switch -
 
-  - name: git pull
+  - name: gp
     keyword: gp
     snippet: git pull
 
-  - name: git push origin --tags
+  - name: gpst
     keyword: gpst
     snippet: git push origin --tags
 
-  - name: git rebase
+  - name: grb
     keyword: grb
     snippet: git rebase
 
-  - name: git rebase
+  - name: grbc
     keyword: grbc
     snippet: git rebase --continue
 
-  - name: git rebase
+  - name: grba
     keyword: grba
     snippet: git rebase --abort
 
 # npm, yarn
-  - name: npm run start
+  - name: ns
     keyword: ns
     snippet: npm run start
 
-  - name: yarn start
+  - name: ys
     keyword: ys
     snippet: yarn start
 
-  - name: yarn test
+  - name: yt
     keyword: yt
     snippet: yarn test
 
-  - name: yarn build
+  - name: yb
     keyword: yb
     snippet: yarn build
 
 # docker
-  - name: docker
+  - name: d
     keyword: d
     snippet: docker
 
-  - name: docker ps
+  - name: dp
     keyword: dp
     snippet: docker ps
 
-  - name: docker ps -a
+  - name: dpa
     keyword: dpa
     snippet: docker ps -a
 
-  - name: docker-compose up -d
+  - name: dcud
     keyword: dcud
     snippet: docker-compose up -d
 
-  - name: docker-compose start
+  - name: dcst
     keyword: dcst
     snippet: docker-compose start
 
-  - name: docker-compose stop
+  - name: dcsp
     keyword: dcsp
     snippet: docker-compose stop
 
 # shell
-  - name: source zprofile
+  - name: szp
     keyword: szp
     snippet: source ~/.zsh/.zprofile
 
-  - name: source zshrc
+  - name: szr
     keyword: szr
     snippet: source ~/.zsh/.zshrc
 
-  - name: exec $SHELL -l
+  - name: es
     keyword: es
     snippet: exec $SHELL -l
 
 # others
-  - name: vim
+  - name: v
     keyword: v
     snippet: vim
 
-  - name: tig
+  - name: t
     keyword: t
     snippet: tig
 
