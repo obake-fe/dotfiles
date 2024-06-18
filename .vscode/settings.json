@@ -10,5 +10,6 @@
     "diffEditor.wordWrap": "off",
     "editor.guides.indentation": false,
     "editor.guides.bracketPairs": false,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "MesloLGS NF, Menlo, Monaco, 'Courier New', monospace"
 }
