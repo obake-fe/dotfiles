@@ -155,3 +155,7 @@ snippets:
     snippet: date "+%Y%m%d"
     evaluate: true # snippetをシェルスクリプトとして解釈し、その出力を展開する
     global: true # 行頭以外でも展開する (Zshのglobal alias相当)
+
+  - name: cle
+    keyword: cle
+    snippet: code --list-extensions > ~/Library/Application\ Support/Code/User/extensions

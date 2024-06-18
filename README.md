@@ -28,6 +28,7 @@ $ sh ./installer.sh ~/.vim/bundles
 - ホームディレクトリにdotfilesのシンボリックリンクを作成
 ```shell
 $ sh/mk_link.sh
+$ sh/vscode_install.sh
 ```
 
 ## Node.js
@@ -69,3 +70,4 @@ $ brew bundle --global
 - [BrewBundleの使い方.md](https://gist.github.com/yoshimana/43b9205ddedad0ad65f2dee00c6f4261)
 - [Macでyarnをインストールする方法 \| Awesome Blog](https://awesome-linus.com/2019/04/11/mac-yarn-install/)
 - [Brewfile からパッケージをインストールする](https://engineers.weddingpark.co.jp/homebrew-bundle/)
+- [VSCode 環境をgit管理してどこでも同じ環境を引き継ぐ - Qiita](https://qiita.com/miiina016/items/018331b36ecf57ed8973)
