@@ -4,10 +4,6 @@ snippets:
     keyword: ..
     snippet: cd ..
 
-  - name: ...
-    keyword: ...
-    snippet: cd ../..
-
 # ls
   - name: ls
     keyword: ls

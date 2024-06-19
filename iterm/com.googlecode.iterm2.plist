@@ -343,9 +343,9 @@
 	<key>Hotkey</key>
 	<true/>
 	<key>HotkeyChar</key>
-	<integer>49</integer>
+	<integer>50</integer>
 	<key>HotkeyCode</key>
-	<integer>18</integer>
+	<integer>19</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>HotkeyModifiers</key>

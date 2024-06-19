@@ -33,7 +33,8 @@ zinit light yuki-yano/zeno.zsh
 
 if [[ -n $ZENO_LOADED ]]; then
   bindkey ' '  zeno-auto-snippet
-  bindkey '^m' zeno-auto-snippet-and-accept-line
+  # bindkey '^m' zeno-auto-snippet-and-accept-line
+  bindkey '^m' accept-line
   bindkey '^i' zeno-completion
   bindkey '^g' zeno-ghq-cd
   bindkey '^r' zeno-history-selection
@@ -123,43 +124,83 @@ setopt AUTO_PARAM_KEYS
 
 
 # alias
-# alias cp="cp -i"
-# alias rm='rm -i'
-# alias mv='mv -i'
+alias ls="gls --color=auto"
+alias la="gls --color=auto -la"
+alias ll="gls --color=auto -l"
+alias cp="cp -i"
+alias rm='rm -i'
+alias mv='mv -i'
 
-# alias gpr="git pull --rebase"
-# alias gba="git branch -a"
-# alias gbm="git branch --merged"
-# alias gbnm="git branch --no-merged"
-# alias grs="git restore"
-# alias gl="git log"
-# alias glo="git log --oneline"
-# alias gr="git reset"
+alias g="git"
+# alias gs="git status -s"  // tigで表示できるのでコメントアウト
+alias gf="git fetch"
+alias ga="git add ."
+alias gcm="git commit -m"
+alias gcnm="git commit --no-verify -m"
+alias gp="git pull"
+alias gpr="git pull --rebase"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbm="git branch --merged"
+alias gbnm="git branch --no-merged"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias gc-="git checkout -"
+alias gs="git switch"
+alias gsc="git switch -c"
+alias grs="git restore"
+alias gl="git log"
+alias glo="git log --oneline"
+alias gr="git reset"
+alias gps="git push"
 alias gpsu="git symbolic-ref --short HEAD | tr -d "\n" | xargs -I@ git push -u origin @" #カレントブランチで `git push -u` を行う
+alias gpst="git push origin --tags"
+alias gss="git stash save"
+alias gsa="git stash apply"
+alias gsd="git stash drop"
+alias gcp="git cherry-pick"
+alias gcpc="git cherry-pick --continue"
+alias gcpa="git cherry-pick --abort"
+alias grb="git rebase"
+alias grbc="git rebase --continue"
+alias arba="git rebase --abort"
 
-# alias gss="git stash save"
-# alias gsa="git stash apply"
-# alias gsd="git stash drop"
-# alias gcp="git cherry-pick"
-# alias gcpc="git cherry-pick --continue"
-# alias gcpa="git cherry-pick --abort"
+alias v="vim"
+alias t="tig"
 
-# alias pngq="pngquant --ext .png --force --speed 1"
+alias szp="source ~/.zsh/.zprofile"
+alias szr="source ~/.zsh/.zshrc"
+alias es='exec $SHELL -l'
 
-# alias bs="brew search"
-# alias bi="brew info"
+alias pngq="pngquant --ext .png --force --speed 1"
 
-# alias ysb="yarn storybook"
+alias bs="brew search"
+alias bi="brew info"
 
-# alias di="docker image"
-# alias dil="docker image ls"
-# alias dv="docker volume"
-# alias dvl="docker volume ls"
-# alias dc="docker-compose"
+alias ysb="yarn storybook"
+
+alias ns="npm run start"
+alias ys="yarn start"
+alias ysb="yarn storybook"
+alias yt="yarn test"
+alias yb="yarn build"
+
+alias d="docker"
+alias dp="docker ps"
+alias dpa="docker ps -a"
+alias di="docker image"
+alias dil="docker image ls"
+alias dv="docker volume"
+alias dvl="docker volume ls"
+alias dc="docker-compose"
+alias dcud="docker-compose up -d"
+alias dcst="docker-compose start" 
+alias dcsp="docker-compose stop"
+
 
 # others
 ## mkdir & cd
-# function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 ## history管理
 zshaddhistory() {
